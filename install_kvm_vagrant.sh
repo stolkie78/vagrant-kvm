@@ -33,21 +33,12 @@ newgrp libvirt
 echo "Installing Vagrant..."
 wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-
 sudo apt update && apt install -y vagrant
+sudo apt update && apt install -y  ruby-libvirt libvirt-daemon-system libvirt-clients ebtables dnsmasq-base libxslt-dev libxml2-dev libvirt-dev zlib1g-dev ruby-dev libguestfs-tools libxslt-dev libxml2-dev libvirt-dev zlib1g-dev ruby-dev libguestfs-tools build-essential
 
 # Verify Vagrant installation
 echo "Vagrant version:"
 vagrant --version
-
-sudo apt install qemu libvirt-daemon-system libvirt-clients libxslt-dev libxml2-dev libvirt-dev zlib1g-dev ruby-dev ruby-libvirt ebtables dnsmasq-base
-
-sudo apt install ruby-libvirt qemu libvirt-daemon-system libvirt-clients ebtables dnsmasq-base libxslt-dev libxml2-dev libvirt-dev zlib1g-dev ruby-dev libguestfs-tools
-sudo apt install ruby-libvirt libvirt-daemon-system libvirt-clients ebtables dnsmasq-base libxslt-dev libxml2-dev libvirt-dev zlib1g-dev ruby-dev libguestfs-tools
-apt-get install qemu libvirt-daemon-system libvirt-clients ebtables dnsmasq-base
-apt-get install libxslt-dev libxml2-dev libvirt-dev zlib1g-dev ruby-dev
-apt-get install libguestfs-tools
-apt-get install buildessentials
 
 # Install the Vagrant-libvirt plugin
 echo "Installing vagrant-libvirt plugin..."
